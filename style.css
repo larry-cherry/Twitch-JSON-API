@@ -25,7 +25,8 @@
           margin: auto; }
           .twitch-app #channels .channel a .channel-title img {
             border-radius: 50%;
-            display: inline; }
+            display: inline;
+            vertical-align: middle; }
           .twitch-app #channels .channel a .channel-title h3 {
             display: inline;
             font-size: 1.5em; }
