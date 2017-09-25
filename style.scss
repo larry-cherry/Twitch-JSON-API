@@ -17,9 +17,9 @@ $divider-color:        #BDBDBD;
   #channels{
     display: block;
     margin: auto 25px;
-    div {
-      
-      white-space: nowrap;
+    .channel {  
+      -webkit-transition: background-color 3s; /* Safari */
+      transition: background-color 3s;
       border-radius: 50px;
       margin-top: 10px;
       margin-bottom: 10px;
@@ -29,20 +29,30 @@ $divider-color:        #BDBDBD;
       a {
         color: $primary-text-color;
         text-decoration: none;
-        // display: inline-block;
-        h3 {
-          font-size: 1.5em;
+        .channel-title{
+          margin: auto;
+          img {
+            border-radius: 50%;
+            display: inline;
+            vertical-align: middle; 
+          }
+          h3 {
+            display: inline;
+            font-size: 1.5em;
+            i {
+              -webkit-transition: color 3s; /* Safari */
+              transition: color 3s;
+            }
+            .fa-toggle-on {
+              color: green;
+            }
+            .fa-toggle-off {
+              color: red;
+            }
+          }
+
         }
-        i {
-          -webkit-transition: all 3s; /* Safari */
-          transition: all 3s;
-        }
-        .fa-toggle-on {
-          color: green;
-        }
-        .fa-toggle-off {
-          color: red;
-        }
+        
       }
       
     }

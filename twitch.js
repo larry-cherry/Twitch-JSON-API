@@ -1,6 +1,6 @@
 //Requires JQuery, Font-Awesome
 function Twitch() {
-  this.count = 1;
+  this.pageLoadCount = 0;
 }
 
 Twitch.prototype.online = function(stream) {
@@ -18,7 +18,7 @@ Twitch.prototype.checkStream = function(stream) {
       if(!$(stream).hasClass("active")){
         $(stream).toggleClass("active");
       }
-      else if(!$(stream).find("i").hasClass("fa-toggle-on")){
+      if(!$(stream).find("i").hasClass("fa-toggle-on")){
         $(stream).find("i").removeClass("fa-toggle-off");
         $(stream).find("i").addClass("fa-toggle-on");
       }
@@ -29,10 +29,16 @@ Twitch.prototype.checkStream = function(stream) {
         $(stream).find("i").removeClass("fa-toggle-on");
         $("#freecodecamp").find("i").addClass("fa-toggle-off");
       }
-      else if($(stream).hasClass("active")) {
+      if($(stream).hasClass("active")) {
         $(stream).toggleClass("active");
       }
       $(stream).find("p").html("")
     }
+  });
+}
+Twitch.prototype.checkChannel = function(channel) {
+  $.getJSON("https://stark-dawn-64113.herokuapp.com/twitch?channel=" + channel, function(data){
+    console.log(channel)  
+    $("#" + channel).find("img").attr("src", data.logo)
   });
 }
