@@ -1,46 +1,92 @@
-.twitch-app {
+body {
   background-color: #4b307b;
   color: #FFFFFF;
-  font-family: Helvetica Arial; }
-  .twitch-app h1 {
-    text-align: center; }
-  .twitch-app #channels {
-    display: block;
-    margin: auto 25px; }
-    .twitch-app #channels .channel {
-      -webkit-transition: background-color 3s;
-      /* Safari */
-      -o-transition: background-color 3s;
-      transition: background-color 3s;
-      border-radius: 50px;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      border: 1px solid black;
-      background-color: #6441a5;
-      padding: 20px; }
-      .twitch-app #channels .channel a {
-        color: #212121;
-        text-decoration: none; }
-        .twitch-app #channels .channel a .channel-title {
-          margin: auto; }
-          .twitch-app #channels .channel a .channel-title img {
-            border-radius: 50%;
-            display: inline;
-            vertical-align: middle; }
-          .twitch-app #channels .channel a .channel-title h3 {
-            display: inline;
-            font-size: 1.5em; }
-            .twitch-app #channels .channel a .channel-title h3 i {
-              -webkit-transition: color 3s;
-              /* Safari */
-              -o-transition: color 3s;
-              transition: color 3s; }
-            .twitch-app #channels .channel a .channel-title h3 .fa-toggle-on {
-              color: green; }
-            .twitch-app #channels .channel a .channel-title h3 .fa-toggle-off {
-              color: red; }
-    .twitch-app #channels .active {
-      border-color: #9E9E9E;
-      background-color: #D1C4E9; }
-      .twitch-app #channels .active h3 {
-        color: white; }
+  font-family: Helvetica Arial;
+}
+
+h1 {
+  text-align: center; 
+}
+
+#channels {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+.channel {
+    
+    -webkit-transition: background-color 3s;
+    /* Safari */
+    -o-transition: background-color 3s;
+    transition: background-color 3s;
+    border-radius: 50px;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    background-color: #6441a5;
+    padding: 20px; 
+    
+}
+
+@media only screen and (max-width: 600px;){
+    .channel {
+        width: calc(100% * (1/2) - 10px - 1px);
+        flex: 6;
+}
+
+@media only screen and (min-width: 605px;)
+    .channel {
+        width: calc(100% * (1/4) - 10px - 1px);
+        flex: 2;
+    }
+}
+
+a {
+    color: #212121;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.channel-title {
+    width: 100%; 
+    text-align: center;
+}
+
+.twitch-app #channels .channel a .channel-title img {
+    border-radius: 50%;
+    display: inline;
+    vertical-align: middle; 
+}
+
+.twitch-app #channels .channel a .channel-title h3 {
+    display: inline;
+    font-size: 1.5em; 
+}
+
+.twitch-app #channels .channel a .channel-title h3 i {
+    -webkit-transition: color 3s;
+    /* Safari */
+    -o-transition: color 3s;
+    transition: color 3s; }
+    .twitch-app #channels .channel a .channel-title h3 .fa-toggle-on {
+    color: green; 
+}
+            
+.twitch-app #channels .channel a .channel-title h3 .fa-toggle-off {
+    color: red;
+}
+   
+.twitch-app #channels .active {
+    border-color: #9E9E9E;
+    background-color: #D1C4E9; 
+}
+
+.twitch-app #channels .active h3 {
+    color: white; 
+}
